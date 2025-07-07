@@ -1,8 +1,6 @@
 import {View, Text, KeyboardAvoidingView, Platform, ScrollView, Dimensions, ImageBackground, Image} from 'react-native'
 import {Slot} from "expo-router";
 import {images} from "@/constants";
-import CustomButton from "@/components/CustomButton";
-import CustomInput from "@/components/CustomInput";
 
 export default function _Layout() {
     return (
@@ -12,16 +10,8 @@ export default function _Layout() {
                     <ImageBackground source={images.loginGraphic} className={'size-full rounded-b-lg'} resizeMode={'stretch'}/>
                     <Image source={images.logo} className={'self-center size-48 absolute -bottom-16 z-10'}/>
                 </View>
-                <CustomInput
-                    placeholder="Enter Your Email"
-                    value={''}
-                    onChangeText={(text) => {}}
-                    label='Email'
-                    keyboardType={'email-address'}
-                />
-                <CustomButton/>
-            </ScrollView>
             <Slot/>
+            </ScrollView>
         </KeyboardAvoidingView>
     )
 }
